@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    import { Route } from 'react-router-dom';
+    import React, { Component } from 'react';
+    import Customer from './Customer';
+    import Support from './Support';
 
-export default App;
+    import './normalize.css';
+    import './skeleton.css';
+    import './App.css';
+    class App extends Component {
+      render() {
+        return (
+          <div className="App">
+            <Route exact path="/" render={() => <Customer />} />
+            <Route exact path="/support" render={() => <Support />} />
+          </div>
+        );
+      }
+    }
+
+    export default App;
